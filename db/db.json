@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Chair",
+      "price": "55",
+      "image": "/src/assets/images/chair.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Armchair",
+      "price": "355",
+      "image": "/src/assets/images/armchair.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Lamp",
+      "price": "75",
+      "image": "/src/assets/images/lamp.jpg"
+    },
+    {
+      "id": 4,
+      "name": "RTV Unit",
+      "price": "225",
+      "image": "/src/assets/images/rtvUnit.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Storage Unit",
+      "price": "300",
+      "image": "/src/assets/images/storageUnit.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Desk",
+      "price": "450",
+      "image": "/src/assets/images/desk.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Wardrobe",
+      "price": "650",
+      "image": "/src/assets/images/wardrobe.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Sofa",
+      "price": "1200",
+      "image": "/src/assets/images/sofa.jpg"
+    }
+  ]
+}
