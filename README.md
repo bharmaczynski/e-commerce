@@ -8,13 +8,13 @@
 # install dependencies
 npm install
  
-# serve mock db
-json-server db.json
+# serve mock db at localhost:3330
+json-server db.json --port 3330
 
 # serve with hot reload at localhost:8080
 npm run dev
 
-# serve with hot reload at localhost:8080 and mock db
+# serve with hot reload at localhost:8080 and mock db at localhost:3330
 npm run start
 
 # build for production with minification

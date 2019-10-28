@@ -21,13 +21,13 @@
         />
         <div class="cart-item__quantity-buttons">
           <button
-            @click="item.quantity++"
+            @click="incrementCartItem(item)"
             class="btn"
           >
             <i class="fas fa-plus"></i>
           </button>
           <button 
-            @click="decrementItem(item)"
+            @click="decrementCartItem(item)"
             class="btn"
           >
             <i class="fas fa-minus"></i>
@@ -50,6 +50,11 @@
 <script>
 import { mapActions } from 'vuex';
 
+const CHAR_CODE_NOT_NUMBER_PERIOD = 31;
+const CHAR_CODE_NUMBER_BOTTOM_PERIOD = 48;
+const CHAR_CODE_NUMBER_TOP_PERIOD = 57;
+const CHAR_CODE_DELETE = 46;
+
 export default {
   props: {
     item: {
@@ -60,19 +65,14 @@ export default {
   methods: {
     ...mapActions([
       'removeFromCart',
+      'decrementCartItem',
+      'incrementCartItem',
     ]),
-    decrementItem(item) {
-      if (item.quantity > 0) {
-        item.quantity--;
-      } else {
-        item.quantity = 0;
-      }
-    },
-    isNumber: function(evt) {
+    isNumber(evt) {
       evt = (evt) ? evt : window.event;
       var charCode = (evt.which) ? evt.which : evt.keyCode;
-      if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
-        evt.preventDefault();;
+      if ((charCode > CHAR_CODE_NOT_NUMBER_PERIOD && (charCode < CHAR_CODE_NUMBER_BOTTOM_PERIOD || charCode > CHAR_CODE_NUMBER_TOP_PERIOD)) && charCode !== CHAR_CODE_DELETE) {
+        evt.preventDefault();
       } else {
         return true;
       }
@@ -81,7 +81,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -108,7 +108,7 @@ export default {
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 .cart-item__title {

@@ -54,6 +54,12 @@ const actions = {
   },
   removeFromCart({ commit }, item) {
     commit('removeFromCart', item);
+  },
+  decrementCartItem({ commit }, item) {
+    commit('decrementCartItem', item);
+  },
+  incrementCartItem({ commit }, item) {
+    commit('incrementCartItem', item);
   }
 };
 
@@ -66,14 +72,25 @@ const mutations = {
   addToCart: (state, item) => {
     let found = state.cart.find(product => product.id === item.id);
     if (found) {
-      console.log(found);
       found.quantity++;
     } else {
       Vue.set(item, 'quantity', 1);
       state.cart.push(item);
     }
   },
-  removeFromCart: (state, item) => state.cart = state.cart.filter(product => product.id !== item.id)
+  removeFromCart: (state, item) => state.cart = state.cart.filter(product => product.id !== item.id),
+  decrementCartItem: (state, item) => {
+    let found = state.cart.find(product => product.id === item.id);
+    if (found.quantity > 0) {
+      item.quantity--;
+    } else {
+      found.quantity = 0;
+    }
+  },
+  incrementCartItem: (state, item) => {
+    let found = state.cart.find(product => product.id === item.id);
+    found.quantity++;
+  }
 };
 
 export default {

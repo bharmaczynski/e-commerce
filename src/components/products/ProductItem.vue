@@ -36,13 +36,14 @@ export default {
     ]),
     addItem(item) {
       EventBus.$emit('show-cart');
+      EventBus.$emit('show-notification');
       this.addToCart(item);
     }
   },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .product-item {
   display: flex;
   flex-direction: column;
@@ -62,7 +63,7 @@ export default {
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 .product-item__content {

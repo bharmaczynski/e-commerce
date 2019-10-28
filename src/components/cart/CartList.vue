@@ -40,7 +40,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cart-info {
   text-align: center;
 }

@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .products-header {
   display: flex;
   justify-content: space-between;

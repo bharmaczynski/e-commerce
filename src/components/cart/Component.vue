@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cart {
   margin-bottom: 30px;
 }

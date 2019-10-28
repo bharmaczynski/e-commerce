@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .product-list {
   display: flex;
   justify-content: space-between;
