@@ -43,7 +43,7 @@ const getters = {
 
 const actions = {
   async fetchProducts({ commit }) {
-    const response = await axios.get('http://localhost:3000/products');
+    const response = await axios.get('http://localhost:3330/products');
     commit('setProducts', response.data);
   },
   setSort({ commit }, payload) {
